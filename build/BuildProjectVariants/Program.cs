@@ -62,8 +62,8 @@ namespace BuildProjectVariants
             return project =>
             {
                 // TODO: Make this version-agnostic.
-                string original = @"..\packages\Newtonsoft.Json.4.5.11\lib\net35\Newtonsoft.Json.dll";
-                string replacement = @"..\packages\Newtonsoft.Json.4.5.11\lib\portable-net40+sl4+wp7+win8\Newtonsoft.Json.dll";
+                string original = @"..\packages\Newtonsoft.Json.7.0.1\lib\net35\Newtonsoft.Json.dll";
+                string replacement = @"..\packages\Newtonsoft.Json.7.0.1\lib\portable-net45+wp80+win8+wpa81+dnxcore50\Newtonsoft.Json.dll";
                 foreach (var path in project.Descendants(MsBuild + "HintPath").Where(p => p.Value == original).ToList())
                 {
                     path.Value = replacement;

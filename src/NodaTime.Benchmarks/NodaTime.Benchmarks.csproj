@@ -42,6 +42,10 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Minibench.Framework.Skeet.0.2.2\lib\net45\Minibench.Framework.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Condition="'$(NodaVersion)' != ''" Include="NodaTime">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\NodaTime.$(NodaVersion)\lib\net35-Client\NodaTime.dll</HintPath>
@@ -49,10 +53,6 @@
     <Reference Condition="'$(NodaVersion)' != ''" Include="NodaTime.Serialization.JsonNet">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\NodaTime.Serialization.JsonNet.$(NodaVersion)\lib\net35-Client\NodaTime.Serialization.JsonNet.dll</HintPath>
-    </Reference>
-    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Newtonsoft.Json.4.5.11\lib\net40\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Collections.Immutable, Version=1.0.34.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
