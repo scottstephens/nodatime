@@ -35,9 +35,9 @@ copy /y %PUBLICAPIDIR%\NodaTime.xml "%SRCDIR%\NodaTime\bin\Signed Release Net4"
 copy /y %PUBLICAPIDIR%\NodaTime.Testing.xml "%SRCDIR%\NodaTime.Testing\bin\Signed Release Net4"
 copy /y %PUBLICAPIDIR%\NodaTime.Serialization.JsonNet.xml "%SRCDIR%\NodaTime.Testing\bin\Signed Release Net4"
 
-copy /y %PUBLICPCLAPIDIR%\PublicPclApi\NodaTime.xml "%SRCDIR%\NodaTime\bin\Signed Release Portable"
-copy /y %PUBLICPCLAPIDIR%\PublicPclApi\NodaTime.Testing.xml "%SRCDIR%\NodaTime.Testing\bin\Signed Release Portable"
-copy /y %PUBLICPCLAPIDIR%\PublicPclApi\NodaTime.Serialization.JsonNet.xml "%SRCDIR%\NodaTime.Testing\bin\Signed Release Portable"
+copy /y %PUBLICPCLAPIDIR%\NodaTime.xml "%SRCDIR%\NodaTime\bin\Signed Release Portable"
+copy /y %PUBLICPCLAPIDIR%\NodaTime.Testing.xml "%SRCDIR%\NodaTime.Testing\bin\Signed Release Portable"
+copy /y %PUBLICPCLAPIDIR%\NodaTime.Serialization.JsonNet.xml "%SRCDIR%\NodaTime.Testing\bin\Signed Release Portable"
 
 IF EXIST tmp\nuget rmdir /s /q tmp\nuget
 mkdir tmp\nuget
