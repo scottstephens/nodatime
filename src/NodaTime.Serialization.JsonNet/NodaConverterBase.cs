@@ -9,6 +9,9 @@ using System.Reflection;
 
 namespace NodaTime.Serialization.JsonNet
 {
+    // Only this class within the project cares about the differences between the desktop
+    // framework and .NET Core / PCL types... and it so happens that we're calling the
+    // exact same members, so we just need GetTypeInfo to return a Type.
 #if !PCL
     internal static class TypeInfoShim
     {
