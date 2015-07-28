@@ -86,7 +86,7 @@ namespace BuildProjectVariants
             Action<XDocument> fixImport = project => project.Descendants(MsBuild + "Import")
                 .Single(x => (string) x.Attribute("Project") == @"$(MSBuildToolsPath)\Microsoft.CSharp.targets")
                 .SetAttributeValue("Project", @"$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets");
-            return fixImport + SetFramework("v4.0", "Profile328");
+            return fixImport + SetFramework("v4.5", "Profile259");
         }
 
         static XElement GetPropertyGroup(XDocument project)

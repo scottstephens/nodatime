@@ -13,6 +13,7 @@ using NodaTime.Annotations;
 using NodaTime.TimeZones.Cldr;
 using NodaTime.TimeZones.IO;
 using NodaTime.Utility;
+using NodaTime.Extensions;
 
 namespace NodaTime.TimeZones
 {
@@ -44,7 +45,7 @@ namespace NodaTime.TimeZones
 
             private static TzdbStreamData LoadDefaultDataSource()
             {
-                var assembly = typeof(DefaultHolder).Assembly;
+                var assembly = typeof(DefaultHolder).GetAssembly();
                 using (Stream stream = assembly.GetManifestResourceStream("NodaTime.TimeZones.Tzdb.nzd"))
                 {
                     return TzdbStreamData.FromStream(stream);

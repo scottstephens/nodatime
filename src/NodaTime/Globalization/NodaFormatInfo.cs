@@ -342,7 +342,7 @@ namespace NodaTime.Globalization
         /// <summary>
         /// Gets the <see cref="NodaFormatInfo" /> object for the current thread.
         /// </summary>
-        public static NodaFormatInfo CurrentInfo => GetInstance(Thread.CurrentThread.CurrentCulture);
+        public static NodaFormatInfo CurrentInfo => GetInstance(CultureInfo.CurrentCulture);
 
         /// <summary>
         /// Gets the <see cref="Offset" /> "l" pattern.
