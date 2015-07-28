@@ -5,9 +5,20 @@
 using System;
 using Newtonsoft.Json;
 using NodaTime.Utility;
+using System.Reflection;
 
 namespace NodaTime.Serialization.JsonNet
 {
+#if !PCL
+    internal static class TypeInfoShim
+    {
+        internal static Type GetTypeInfo(this Type type)
+        {
+            return type;
+        }
+    }
+#endif
+
     /// <summary>
     /// Base class for all the Json.NET converters which handle value types (which is most of them).
     /// This deals handles all the boilerplate code dealing with nullity.
@@ -15,7 +26,7 @@ namespace NodaTime.Serialization.JsonNet
     /// <typeparam name="T">The type to convert to/from JSON.</typeparam>
     public abstract class NodaConverterBase<T> : JsonConverter
     {
-        private static readonly Type NullableT = typeof(T).IsValueType ? typeof(Nullable<>).MakeGenericType(typeof(T)) : typeof(T);
+        private static readonly Type NullableT = typeof(T).GetTypeInfo().IsValueType ? typeof(Nullable<>).MakeGenericType(typeof(T)) : typeof(T);
 
         /// <summary>
         /// Returns whether or not this converter supports the given type.
@@ -25,7 +36,7 @@ namespace NodaTime.Serialization.JsonNet
         /// value types); false otherwise.</returns>
         public override bool CanConvert(Type objectType)
         {
-            return typeof(T).IsAssignableFrom(objectType) || objectType == NullableT;
+            return typeof(T).GetTypeInfo().IsAssignableFrom(objectType.GetTypeInfo()) || objectType == NullableT;
         }
 
         /// <summary>
