@@ -93,6 +93,13 @@ namespace NodaTime.Test.Text
             // Parsing using the semi-colon "comma dot" specifier
             new Data(16, 05, 20, 352) { Pattern = "HH:mm:ss;fff", Text = "16:05:20,352" },
             new Data(16, 05, 20, 352) { Pattern = "HH:mm:ss;FFF", Text = "16:05:20,352" },
+
+            // Empty fractional section
+            new Data(0,0,4,0) { Text = "04", Pattern = "ssFF" },
+            new Data(0,0,4,0) { Text = "040", Pattern = "ssFF" },
+            new Data(0,0,4,0) { Text = "040", Pattern = "ssFFF" },
+            new Data(0,0,4,0) { Text = "04", Pattern = "ss.FF"},
+            new Data(0,0,4,0) { Text = "04.", Pattern = "ss.FF"},
         };
 
         internal static Data[] FormatOnlyData = {

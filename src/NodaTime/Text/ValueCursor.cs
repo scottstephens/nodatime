@@ -324,11 +324,6 @@ namespace NodaTime.Text
                     result = result * 10 + digit;
                 }
                 int count = localIndex - Index;
-                // Couldn't parse any digits?
-                if (count == 0)
-                {
-                    return false;
-                }
                 result = (int) (result * Math.Pow(10.0, scale - count));
                 bool ret = !allRequired || localIndex == maxIndex;
                 // Only move the cursor on success.
