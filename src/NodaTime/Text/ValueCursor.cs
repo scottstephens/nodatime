@@ -308,7 +308,7 @@ namespace NodaTime.Text
                     // If we don't have all the digits we're meant to have, we can't possibly succeed.
                     return false;
                 }
-                int maxIndex = Math.Min(localIndex + maximumDigits,Length);
+                int maxIndex = Math.Min(localIndex + maximumDigits, Length);
                 for (; localIndex < maxIndex; localIndex++)
                 {
                     // Optimized digit handling: rather than checking for the range, returning -1
@@ -321,7 +321,7 @@ namespace NodaTime.Text
                     result = result * 10 + digit;
                 }
                 int count = localIndex - Index;
-                // Couldn't parse any digits?
+                // Couldn't parse the minimum number of digits required
                 if (count  < minimumDigits)
                 {
                     return false;
