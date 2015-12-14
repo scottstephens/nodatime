@@ -321,7 +321,7 @@ namespace NodaTime.Text
                     result = result * 10 + digit;
                 }
                 int count = localIndex - Index;
-                // Couldn't parse the minimum number of digits required
+                // Couldn't parse the minimum number of digits required?
                 if (count  < minimumDigits)
                 {
                     return false;
